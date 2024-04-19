@@ -46,7 +46,7 @@ function ReadView({ chapter }) {
       {chapterInfo && (
         <div
           style={{
-            fontSize: 18,
+            fontSize: 20,
             
           }}
         >
