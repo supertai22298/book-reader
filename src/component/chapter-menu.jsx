@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from "react";
 import {
   Accordion,
   AccordionDetails,
@@ -33,7 +34,7 @@ export function ChapterMenu() {
     // Function to fetch data from the chapter-list.json file
     const fetchChapters = async () => {
       try {
-        const response = await fetch("/chapters/chapter-list.json");
+        const response = await fetch("chapters/chapter-list.json");
         const data = await response.json();
         setLocalChapters(data);
       } catch (error) {
@@ -82,7 +83,6 @@ export function ChapterMenu() {
         }}
       >
         <List>
-          {/* Render list items from the chapters data */}
           {localChapters.map((chapter) => (
             <ListItem key={chapter.currentLink}>
               <ListItemButton

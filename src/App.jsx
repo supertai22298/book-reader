@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import React, { useRef } from "react";
 import { ChapterMenu } from "./component/chapter-menu";
 import { Paper } from "@mui/material";
 import ReadView from "./component/read-view";
@@ -11,6 +13,14 @@ function App() {
     "currentLink",
     "chapters/1497-chuong-1497-phuong-nguyen-do-kiep-1"
   );
+
+  const contentRef = useRef(null);
+  // Scroll to top when chapter changes
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [currentLink]);
 
   useEffect(() => {
     // Function to fetch data from the chapter-list.json file
@@ -39,6 +49,7 @@ function App() {
           backgroundColor: "#EDD1B0",
           padding: "16px",
         }}
+        ref={contentRef}
       >
         <ChapterMenu />
         <ReadView chapter={chapter} />
