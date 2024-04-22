@@ -16,13 +16,13 @@ export function ChapterMenu() {
   const [expanded, setExpanded] = useState(false);
 
   const [localChapters, setLocalChapters] = useLocalStorage(
-    "localChapters",
+    "localChaptersTruyenChuFull",
     []
   );
 
   const [currentLink, setCurrentLink] = useLocalStorage(
-    "currentLink",
-    "chapters/1497-chuong-1497-phuong-nguyen-do-kiep-1"
+    "currentLinkTruyenChuFull",
+    "chapters-truyenchufull/1220-chuong-1220-thu-195-chuong-gioi-bich-phuc-kich"
   );
 
   // Function to toggle the expansion state
@@ -31,10 +31,11 @@ export function ChapterMenu() {
   };
 
   useEffect(() => {
-    // Function to fetch data from the chapter-list.json file
     const fetchChapters = async () => {
       try {
-        const response = await fetch("chapters/chapter-list.json");
+        const response = await fetch(
+          "chapters-truyenchufull/chapter-list.json"
+        );
         const data = await response.json();
         setLocalChapters(data);
       } catch (error) {

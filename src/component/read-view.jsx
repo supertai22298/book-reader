@@ -7,11 +7,11 @@ import { useLocalStorage } from "usehooks-ts";
 // eslint-disable-next-line react/prop-types
 function ReadView({ chapter }) {
   const [currentLink, setCurrentLink] = useLocalStorage(
-    "currentLink",
-    "chapters/1497-chuong-1497-phuong-nguyen-do-kiep-1"
+    "currentLinkTruyenChuFull",
+    "chapters-truyenchufull/1220-chuong-1220-thu-195-chuong-gioi-bich-phuc-kich"
   );
 
-  const [localChapters] = useLocalStorage("localChapters", []);
+  const [localChapters] = useLocalStorage("localChaptersTruyenChuFull", []);
 
   const chapterInfo = localChapters.find(
     (localChapter) => localChapter.currentLink === currentLink
@@ -51,8 +51,8 @@ function ReadView({ chapter }) {
             fontSize: 20,
           }}
         >
-          <Typography variant="h6">{chapter.title}</Typography>
           {renderButton}
+          <Typography variant="h6">{chapter.title}</Typography>
           <div dangerouslySetInnerHTML={{ __html: chapter.contentHTML }}></div>
           {renderButton}
         </div>

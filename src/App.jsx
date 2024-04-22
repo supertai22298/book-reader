@@ -10,8 +10,8 @@ function App() {
   const [chapter, setChapter] = useState({});
 
   const [currentLink] = useLocalStorage(
-    "currentLink",
-    "chapters/1497-chuong-1497-phuong-nguyen-do-kiep-1"
+    "currentLinkTruyenChuFull",
+    "chapters-truyenchufull/1220-chuong-1220-thu-195-chuong-gioi-bich-phuc-kich"
   );
 
   const contentRef = useRef(null);
@@ -23,7 +23,6 @@ function App() {
   }, [currentLink]);
 
   useEffect(() => {
-    // Function to fetch data from the chapter-list.json file
     const fetchChapter = async () => {
       try {
         const response = await fetch(`${currentLink}.json`);
